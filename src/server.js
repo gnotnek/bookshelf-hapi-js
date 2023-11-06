@@ -15,7 +15,7 @@ const init = async () => {
   await server.register({
     plugin: require('hapi-mongodb'),
     options: {
-      url: 'mongodb://localhost:27017/bookshelf',
+      url: 'mongodb://127.0.0.1:27017/bookshelf',
       settings: {
         useUnifiedTopology: true
       },
