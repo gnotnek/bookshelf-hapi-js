@@ -1,15 +1,19 @@
-const Books = {
-  collection: 'books',
-  schema: {
-    name: String,
-    author: String,
-    year: Number,
-    summary: String,
-    publisher: String,
-    pageCount: Number,
-    readPage: Number,
-    reading: Boolean
-  }
-}
+const mongoose = require('mongoose')
 
-module.exports = Books
+const bookSchema = new mongoose.Schema({
+  name: String,
+  year: Number,
+  author: String,
+  summary: String,
+  publisher: String,
+  pageCount: Number,
+  readPage: Number,
+  reading: Boolean,
+  finished: Boolean,
+  insertedAt: String,
+  updatedAt: String
+})
+
+const Book = mongoose.model('Book', bookSchema)
+
+module.exports = Book

@@ -1,5 +1,7 @@
 const Hapi = require('@hapi/hapi')
 const routes = require('./routes')
+// eslint-disable-next-line no-unused-vars
+const mongoose = require('./db')
 
 const init = async () => {
   const server = Hapi.server({
@@ -9,17 +11,6 @@ const init = async () => {
       cors: {
         origin: ['*']
       }
-    }
-  })
-
-  await server.register({
-    plugin: require('hapi-mongodb'),
-    options: {
-      url: 'mongodb://127.0.0.1:27017/bookshelf',
-      settings: {
-        useUnifiedTopology: true
-      },
-      decorate: true
     }
   })
 
